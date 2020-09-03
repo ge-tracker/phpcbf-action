@@ -5,4 +5,7 @@ RUN wget https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.6/ph
     && mv phpcbf /usr/local/bin/phpcbf
 
 ADD entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
