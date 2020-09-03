@@ -1,7 +1,3 @@
-#!/bin/sh
+#!/bin/sh -l
 
-if [ -n "${INPUT_INSTALLED_PATHS}" ]; then
-    phpcbf --config-set installed_paths "${INPUT_INSTALLED_PATHS}"
-fi
-
-phpcbf
+sh -c "/usr/local/bin/phpcbf $*"

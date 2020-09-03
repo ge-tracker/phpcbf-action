@@ -1,8 +1,8 @@
-# Container image that runs your code
-FROM cytopia/phpcbf:3
+FROM php:7.3-alpine
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.sh /entrypoint.sh
+RUN wget https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.5.6/phpcbf.phar -O phpcbf \
+    && chmod a+x phpcbf \
+    && mv phpcbf /usr/local/bin/phpcbf
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
-#ENTRYPOINT ["/entrypoint.sh"]
+ADD entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
