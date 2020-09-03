@@ -1,0 +1,6 @@
+name: 'PHP_CodeSniffer PHPCBF coding standards fixer'
+description: 'phpcbf to check and fix code against defined PHP coding standards'
+author: 'GE Tracker'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
